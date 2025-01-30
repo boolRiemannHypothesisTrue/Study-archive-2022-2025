@@ -1,0 +1,2095 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 14.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     85099,       2087]
+NotebookOptionsPosition[     76746,       1916]
+NotebookOutlinePosition[     78119,       1961]
+CellTagsIndexPosition[     78076,       1958]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+\:041f\:0435\:0440\:0432\:0438\:0447\:043d\:0430\:044f \:043e\:0431\:0440\
+\:0430\:0431\:043e\:0442\:043a\:0430 \:0434\:0430\:043d\:043d\:044b\:0445 \
+\:044d\:043a\:0441\:043f\:0435\:0440\:0438\:043c\:0435\:043d\:0442\:0430 \
+\:0432 CAS Wolfram Mathematica 14 \
+\>", "Subsubsection",
+ CellChangeTimes->{{3.937216185288656*^9, 
+  3.937216190185463*^9}},ExpressionUUID->"1f1cfff9-6838-3d44-a826-\
+929904824980"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:0412\:0445\:043e\:0434\:043d\:044b\:0435 \:0434\:0430\:043d\:043d\:044b\
+\:0435(\:0440\:0435\:0437\:0443\:043b\:044c\:0442\:0430\:0442\:044b \:044d\
+\:043a\:0441\:043f\:0435\:0440\:0438\:043c\:0435\:043d\:0442\:0430)
+Un-\:043f\:0430\:0434\:0435\:043d\:0438\:0435 \:043d\:0430\:043f\:0440\:044f\
+\:0436\:0435\:043d\:0438\:044f \:043d\:0430 \:043d\:043e\:0440\:043c\:0430\
+\:043b\:044c\:043d\:043e\:043c \:0441\:043e\:043f\:0440\:043e\:0442\:0438\
+\:0432\:043b\:0435\:043d\:0438\:0435(mV)
+Ut-\:043f\:0430\:0434\:0435\:043d\:0438\:0435 \:043d\:0430\:043f\:0440\:044f\
+\:0436\:0435\:043d\:0438\:044f \:043d\:0430 \:043d\:0438\:0442\:0438(V)
+T2-\:0442\:0435\:043c\:043f\:0435\:0440\:0430\:0442\:0443\:0440\:0430 \:0431\
+\:043b\:043e\:043a\:0430(\[Degree]C)- \:0438 \:0441\:0440\:0430\:0437\:0443 \
+\:043f\:0435\:0440\:0435\:0432\:0435\:0434\:0435\:043c T2 \:0432 \:041a\:0435\
+\:043b\:044c\:0432\:0438\:043d\:044b(Kelvins)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.9373893953331738`*^9, 3.937389407156107*^9}, {
+  3.937389644400133*^9, 3.9373896926268005`*^9}, {3.937389746496258*^9, 
+  3.9373897776034584`*^9}, {3.9373898534300556`*^9, 
+  3.937389877010416*^9}},ExpressionUUID->"0f9fb371-80a0-3649-8529-\
+d648fe9d8b2b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Un", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "38.7", ",", "63.4", ",", "85.7", ",", "102.8", ",", "127.5", ",", 
+       "140.3", ",", "148.8", ",", "162.9", ",", "174.4", ",", "181.3"}], 
+      "}"}], ",", "\"\<Millivolts\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Ut", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "0.12", ",", "0.19", ",", "0.31", ",", "0.38", ",", "0.51", ",", "0.62",
+        ",", "0.7", ",", "0.82", ",", "0.98", ",", "1.03"}], "}"}], ",", 
+     "\"\<Volts\>\""}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"T2", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "19.7", ",", "19.7", ",", "19.7", ",", "19.8", ",", "19.9", ",", "20.2",
+        ",", "20.5", ",", "20.9", ",", "21.4", ",", "22."}], "}"}], ",", 
+     "\"\<DegreesCelsius\>\""}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"T2", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{"T2", ",", "\"\<Kelvins\>\""}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.9358976397925587`*^9, 3.935897673384716*^9}, {
+   3.935899679302114*^9, 3.935899758495339*^9}, {3.9372161802165737`*^9, 
+   3.93721624732219*^9}, {3.937216398663107*^9, 3.937216399820013*^9}, 
+   3.937216522812441*^9, {3.9373890150935326`*^9, 3.937389034463148*^9}, {
+   3.9373890912024736`*^9, 3.9373890950949154`*^9}, {3.937389319141955*^9, 
+   3.937389320017615*^9}, {3.937389808729563*^9, 3.937389809477852*^9}, {
+   3.9373898820104294`*^9, 3.9373898931963806`*^9}},
+ CellLabel->"In[36]:=",ExpressionUUID->"e7626f3d-58e3-dd49-aa17-c0750f456f2d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"292.84999999999997`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"292.84999999999997`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"292.84999999999997`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"292.95`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"293.04999999999995`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"293.34999999999997`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"293.65`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"294.04999999999995`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"294.54999999999995`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"295.15`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{{3.937389883429938*^9, 3.937389893842974*^9}, {
+  3.9431634002013493`*^9, 3.943163401859043*^9}},
+ CellLabel->"Out[39]=",ExpressionUUID->"316ccb34-4152-2d47-862b-aa6b69b6736a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:041d\:043e\:0440\:043c\:0430\:043b\:044c\:043d\:043e\:0435 \:0441\
+\:043e\:043f\:0440\:043e\:0442\:0438\:0432\:043b\:0435\:043d\:0438\:0435(\
+\:043d\:0430\:0433\:0440\:0443\:0437\:043a\:0430)", "Subsubsection",
+ CellChangeTimes->{{3.9373898206384487`*^9, 
+  3.9373898282339935`*^9}},ExpressionUUID->"827d48ae-6c6f-d949-85fe-\
+ee165b86d0b4"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Rn", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"0.1", ",", "\"\<Ohms\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.9358976859889145`*^9, 3.935897752059641*^9}, {
+  3.937216255159579*^9, 3.937216339731821*^9}, {3.937389104009683*^9, 
+  3.9373891185532074`*^9}, {3.9373891636683464`*^9, 3.9373893113626614`*^9}, {
+  3.93738952645203*^9, 3.93738953685726*^9}, {3.9373898128840294`*^9, 
+  3.937389814498987*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"438c590b-8ce5-a142-beb1-d4646fa77187"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:041d\:0430\:0439\:0434\:0435\:043c \:0441\:0438\:043b\:0443 \:0442\
+\:043e\:043a\:0430 \:0447\:0435\:0440\:0435\:0437 \:043d\:0438\:0442\:044c:", \
+"Subsubsection",
+ CellChangeTimes->{{3.937389545035921*^9, 
+  3.9373895500535984`*^9}},ExpressionUUID->"f3173e8b-aad7-404c-8d33-\
+079c005669db"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"i", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    FractionBox["Un", "Rn"], ",", "\"\<Amperes\>\""}], "]"}]}]], "Input",
+ CellLabel->"In[41]:=",ExpressionUUID->"e577dec7-cf2e-754e-9cc0-5ab709cb8afd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"0.387`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"0.634`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"0.857`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.028`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.2750000000000001`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.403`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.488`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.629`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.744`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"], ",", 
+   TemplateBox[{"1.813`", "\"A\"", "amperes", "\"Amperes\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.937389554581152*^9, {3.9431634007036877`*^9, 3.9431634019348183`*^9}},
+ CellLabel->"Out[41]=",ExpressionUUID->"13acad23-cc70-8640-a58c-9820185bc532"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:041d\:0430\:0439\:0434\:0435\:043c \:0441\:043e\:043f\:0440\:043e\
+\:0442\:0438\:0432\:043b\:0435\:043d\:0438\:0435 \:043d\:0438\:0442\:0438:", \
+"Subsubsection",
+ CellChangeTimes->{{3.93738956495298*^9, 
+  3.9373895730394154`*^9}},ExpressionUUID->"2b745f90-50c1-e04c-bde6-\
+df1f1ea3c8c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Rt", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    FractionBox["Ut", "i"], ",", "\"\<Ohms\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.9358977744301834`*^9, 3.9358977754091663`*^9}, {
+  3.937389343284874*^9, 3.937389373815008*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"44b31844-d46c-b548-bd3e-107185c23750"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+    "0.31007751937984496`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.2996845425867508`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.36172695449241543`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.36964980544747084`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.39999999999999997`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.4419101924447612`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.47043010752688164`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.5033763044812768`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.5619266055045872`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "0.568119139547711`", "\"\[CapitalOmega]\"", "ohms", "\"Ohms\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9358977762393894`*^9, 3.9359897905807877`*^9, 3.936594752077055*^9, 
+   3.9372163731666183`*^9, 3.937216403253832*^9, 3.9372164994148393`*^9, {
+   3.937389334684702*^9, 3.937389374330939*^9}, {3.9431634007408447`*^9, 
+   3.943163401995369*^9}},
+ CellLabel->"Out[42]=",ExpressionUUID->"198edfb4-f4df-7447-a978-a712c97b080e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Rzero-\:0441\:043e\:043f\:0440\:043e\:0442\:0438\:0432\:043b\:0435\:043d\
+\:0438\:0435 \:043f\:043b\:0430\:0442\:0438\:043d\:043e\:0432\:043e\:0439 \
+\:043d\:0438\:0442\:0438 \:043f\:0440\:0438 0\[Degree]C(Ohms)\n\:041d\:0430\
+\:0439\:0434\:0435\:043c Rttilda-\:0438\:0437\:043c\:0435\:043d\:0435\:043d\
+\:0438\:0435 \:0441\:043e\:043f\:0440\:043e\:0442\:0438\:0432\:043b\:0435\
+\:043d\:0438\:044f \:043d\:0438\:0442\:0438 \:043e\:0442\:043d\:043e\:0441\
+\:0438\:0442\:0435\:043b\:044c\:043d\:043e Rzero; ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"Rttilda", "=", 
+    FractionBox[
+     RowBox[{"Rt", "-", "Rzero"}], "Rzero"]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "242c1d94-2ae1-c449-9d2f-2e7e120db6d6"],
+ ",\:0431\:0435\:0437\:0440\:0430\:0437\:043c\:0435\:0440\:043d\:0430\:044f \
+\:0432\:0435\:043b\:0438\:0447\:0438\:043d\:0430"
+}], "Subsubsection",
+ CellChangeTimes->{{3.9373899426664524`*^9, 3.937389991558487*^9}, {
+  3.937390021796032*^9, 
+  3.937390124258238*^9}},ExpressionUUID->"ebce0788-b379-c544-916e-\
+dd3e155d01c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"Rzero", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"0.28736", ",", "\"\<Ohms\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Rttilda", "=", 
+  RowBox[{
+   FractionBox["Rt", "Rzero"], "-", "1"}]}]}], "Input",
+ CellChangeTimes->{{3.9358977849904156`*^9, 3.9358977874166*^9}, {
+  3.937389919314205*^9, 3.93738992832979*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"6323ffa1-b4a9-ab47-b81d-78e943952649"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "0.0790559555256296`", ",", "0.0428888592244947`", ",", 
+   "0.2587936890743856`", ",", "0.28636485748702256`", ",", 
+   "0.3919821826280623`", ",", "0.5378277855121143`", ",", 
+   "0.6370758196230568`", ",", "0.7517271174877393`", ",", 
+   "0.9554795570176335`", ",", "0.9770292996509986`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935897788255348*^9, 3.9359897906094704`*^9, 3.936594752108963*^9, 
+   3.937216373221468*^9, 3.937216403276771*^9, 3.93721649944177*^9, 
+   3.937389929480877*^9, {3.9431634007818565`*^9, 3.943163402053623*^9}},
+ CellLabel->"Out[44]=",ExpressionUUID->"9e1da089-040c-d34c-9e86-bbe6f6737097"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:041d\:0430\:0439\:0434\:0435\:043c \:0442\:0435\:043c\:043f\:0435\:0440\
+\:0430\:0442\:0443\:0440\:0443 \:043d\:0438\:0442\:0438 T1 \:043f\:043e \
+\:0433\:0440\:0430\:0434\:0443\:0438\:0440\:043e\:0432\:043e\:0447\:043d\:043e\
+\:0439 \:0437\:0430\:0432\:0438\:0441\:0438\:043c\:043e\:0441\:0442\:0438 \
+\:0434\:043b\:044f \:043f\:043b\:0430\:0442\:0438\:043d\:043e\:0432\:043e\
+\:0433\:043e \:0442\:0435\:0440\:043c\:043e\:043c\:0435\:0442\:0440\:0430 \
+\:0441\:043e\:043f\:0440\:043e\:0442\:0438\:0432\:043b\:0435\:043d\:0438\:044f\
+,\:0441\:043d\:0430\:0447\:0430\:043b\:0430 \:0432 \:0426\:0435\:043b\:044c\
+\:0441\:0438\:044f\:0445(\[Degree]C)\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.937390156660265*^9, 
+  3.937390215654564*^9}},ExpressionUUID->"381afd85-2975-614b-a1a7-\
+15753ae0f708"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"T1", "=", 
+  RowBox[{"Quantity", "[", 
+   RowBox[{
+    RowBox[{"252", "*", "Rttilda", "*", 
+     FractionBox["2", 
+      RowBox[{"1", "+", 
+       SqrtBox[
+        RowBox[{"1", "-", 
+         RowBox[{"0.1485", "*", "Rttilda"}]}]]}]]}], ",", 
+    "\"\<DegreesCelsius\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.937390200350088*^9, 3.937390228428309*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"c9ed131b-fde6-7344-8514-a47e47a9658a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{
+    "19.98091696393073`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "10.825256559958534`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "65.85492367388389`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "72.94789975912168`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "100.26040700450103`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "138.3525442458236`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "164.53117225594426`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "195.03939458703982`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "249.9875182634823`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"], ",", 
+   TemplateBox[{
+    "255.85533160805542`", "\"\[Degree]C\"", "degrees Celsius", 
+     "\"DegreesCelsius\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.9358977966907067`*^9, {3.935989784206415*^9, 3.935989790618437*^9}, 
+   3.936594752142882*^9, 3.937216373266348*^9, 3.937216403311676*^9, 
+   3.937216499469726*^9, 3.937390142260315*^9, {3.937390217868557*^9, 
+   3.9373902293339615`*^9}, {3.943163400790844*^9, 3.9431634021001587`*^9}},
+ CellLabel->"Out[45]=",ExpressionUUID->"a82244cd-0110-5542-94fc-9ba79e36741f"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:041f\:0435\:0440\:0435\:0432\:043e\:0434 T1 \:0438\:0437 \[Degree]\
+\:0421(Degrees Celsius) \:0432 \:041a\:0435\:043b\:044c\:0432\:0438\:043d\
+\:044b(Kelvins)", "Subsubsection",
+ CellChangeTimes->{{3.937390251239708*^9, 
+  3.937390283745844*^9}},ExpressionUUID->"317fdaa0-91a2-334c-af1a-\
+04536d0b0fa8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"T1", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{"T1", ",", "\"\<Kelvins\>\""}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.937390232703921*^9, 3.9373902405081377`*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"58c5a689-d343-f74a-adcb-2b0e3ec883fd"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"293.1309169639307`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"283.9752565599585`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"339.00492367388387`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"346.0978997591217`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"373.410407004501`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"411.5025442458236`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"437.68117225594426`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"468.1893945870398`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"523.1375182634822`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"529.0053316080554`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.937390242545431*^9, {3.94316340083296*^9, 3.9431634021539726`*^9}},
+ CellLabel->"Out[46]=",ExpressionUUID->"24a8a288-1055-9644-aa3b-c2dfe6feac14"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:041e\:0431\:043e\:0437\:043d\:0430\:0447\:0438\:043c \:0434\:043b\
+\:0438\:043d\:0443 \:043d\:0438\:0442\:0438 \:0437\:0430 l(mm)", \
+"Subsubsection",
+ CellChangeTimes->{{3.9373903286033974`*^9, 
+  3.937390339929655*^9}},ExpressionUUID->"58934cc7-0a66-0946-9289-\
+e8a977900fbf"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"81.5", ",", "\"\<Millimeters\>\""}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.937390300698273*^9, 3.9373903167247944`*^9}, {
+  3.9373903538041058`*^9, 3.937390356076309*^9}},
+ CellLabel->"In[47]:=",ExpressionUUID->"4837eb32-7149-714f-89a8-b31a495b804c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\:0412\:044b\:0447\:0438\:0441\:043b\:0438\:043c \:043b\:0438\:043d\
+\:0435\:0439\:043d\:0443\:044e \:043f\:043b\:043e\:0442\:043d\:043e\:0441\
+\:0442\:044c \:0442\:0435\:043f\:043b\:043e\:0432\:043e\:0433\:043e \:043f\
+\:043e\:0442\:043e\:043a\:0430 ql(W/m)", "Subsubsection",
+ CellChangeTimes->{{3.9373903665874405`*^9, 
+  3.9373904395787716`*^9}},ExpressionUUID->"9f00c280-8e85-8f41-8920-\
+6c354885bff3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ql", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"i", "*", "Ut"}], "l"], ",", 
+    FractionBox["\"\<Watts\>\"", "\"\<Meters\>\""]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.937390444183487*^9, 3.9373904762701035`*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"ca38b098-ecbb-7d40-9198-c3517e320640"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"0.5698159509202454`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"1.478036809815951`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"3.259754601226994`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"4.793128834355828`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"7.978527607361966`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"10.673128834355829`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"12.78036809815951`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"16.38993865030675`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"20.97079754601227`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"22.91276073619632`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935897805956444*^9, 3.9359897906450043`*^9, 3.936594752196253*^9, 
+   3.9372163733311768`*^9, 3.937216403367531*^9, 3.937216499479692*^9, 
+   3.937390319058681*^9, 3.9373904779105177`*^9, {3.9431634011598244`*^9, 
+   3.9431634022302017`*^9}},
+ CellLabel->"Out[48]=",ExpressionUUID->"c859eb88-a69b-f64f-ac86-0de72d67fccd"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\:0412\:044b\:0447\:0438\:0441\:043b\:0438\:043c \:0440\:0430\:0434\:0438\
+\:0430\:0446\:0438\:043e\:043d\:043d\:0443\:044e \:0441\:043e\:0441\:0442\
+\:0430\:0432\:043b\:044f\:044e\:0449\:0443\:044e  \:0442\:0435\:043f\:043b\
+\:043e\:0432\:043e\:0433\:043e \:043f\:043e\:0442\:043e\:043a\:0430 qlr(W/m)\n\
+\:0414\:043b\:044f \:044d\:0442\:043e\:0433\:043e \:0432\:0432\:0435\:0434\
+\:0435\:043c \:043a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:044b:\nc0-\
+\:043a\:043e\:043d\:0441\:0442\:0430\:043d\:0442\:0430 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\:0421\:0442\:0435\:0444\:0430\:043d\:0430", "-", 
+    RowBox[{"\:0411\:043e\:043b\:044c\:0446\:043c\:0430\:043d\:0430", "(", 
+     RowBox[{"W", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["m", "2"], "*", 
+        SuperscriptBox["K", "4"]}], ")"}]}], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "e1d795b1-8955-714f-b4eb-625a4e5a1401"],
+ "\neps-\:0441\:0442\:0435\:043f\:0435\:043d\:044c \:0447\:0435\:0440\:043d\
+\:043e\:0442\:044b \:043f\:043b\:0430\:0442\:0438\:043d\:043e\:0432\:043e\
+\:0439 \:043d\:0438\:0442\:0438(\:0431\:0435\:0437\:0440\:0430\:0437\:043c\
+\:0435\:0440\:043d\:0430\:044f \:0432\:0435\:043b\:0438\:0447\:0438\:043d\
+\:0430)\nd1-\:0434\:0438\:0430\:043c\:0435\:0442\:0440 \:043d\:0438\:0442\
+\:0438(mm)"
+}], "Subsubsection",
+ CellChangeTimes->{{3.9373905032551613`*^9, 3.9373906264524174`*^9}, {
+  3.9373908666249485`*^9, 
+  3.9373908737118816`*^9}},ExpressionUUID->"738c9769-ff5c-c84a-8d85-\
+856799ef4970"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c0", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{
+     RowBox[{"5.67", "*", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "8"}]]}], ",", 
+     FractionBox["\"\<Watts\>\"", 
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{"(", "\"\<Meters\>\"", ")"}], "2"], "*", 
+       SuperscriptBox[
+        RowBox[{"(", "\"\<Kelvins\>\"", ")"}], "4"]}]]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"eps", "=", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Quantity", "[", 
+       RowBox[{"0.00013", ",", 
+        FractionBox["1", "\"\<Kelvins\>\""]}], "]"}], "*", "T1"}], "-", 
+     "0.0025"}], ")"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"d1", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{"0.189", ",", "\"\<Millimeters\>\""}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"qlr", "=", 
+  RowBox[{"UnitConvert", "[", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"eps", "*", "c0", "*", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["T1", "4"], "-", 
+        SuperscriptBox["T2", "4"]}], ")"}], "*", "\[Pi]", "*", "d1"}], "]"}], 
+    ",", 
+    FractionBox["\"\<Watts\>\"", "\"\<Meters\>\""]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.935897815968208*^9, 3.935897831475977*^9}, {
+  3.937390635984871*^9, 3.937390708001732*^9}, {3.937390755108284*^9, 
+  3.937390767291546*^9}, {3.937390819378515*^9, 3.937390844181053*^9}, {
+  3.9373908886819944`*^9, 3.9373909366157913`*^9}},
+ CellLabel->"In[49]:=",ExpressionUUID->"36cf8b4d-f800-714d-8c2e-14916c9b85ca"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"0.00003387886434026459`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.0009870210615718924`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.008190921587204686`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.009989857053230277`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.018705341113415673`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.03651471780646491`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.05358920183461606`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.07972251178715153`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.1485771992008308`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.15779437488594034`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935897833396406*^9, 3.935989790670929*^9, 3.936594752238032*^9, {
+   3.937216373419939*^9, 3.9372164034193883`*^9}, 3.9372164995056267`*^9, 
+   3.937390719699421*^9, 3.937390768756706*^9, 3.937390849055231*^9, {
+   3.9373909102309017`*^9, 3.937390937257969*^9}, {3.9431634012240925`*^9, 
+   3.9431634023008537`*^9}},
+ CellLabel->"Out[52]=",ExpressionUUID->"eb0535ea-5646-4744-9173-1edb1b488692"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:041d\:0430\:0439\:0434\:0435\:043c \:043a\:043e\:043d\:0434\:0443\:043a\
+\:0442\:0438\:0432\:043d\:0443\:044e(\:0442\:0435\:043f\:043b\:043e\:043f\
+\:0440\:043e\:0432\:043e\:0434\:043d\:043e\:0441\:0442\:043d\:0443\:044e) \
+\:0441\:043e\:0441\:0442\:0430\:0432\:043b\:044f\:044e\:0449\:0443\:044e \
+\:043f\:043b\:043e\:0442\:043d\:043e\:0441\:0442\:0438 \:0442\:0435\:043f\
+\:043b\:043e\:0432\:043e\:0433\:043e \
+\:043f\:043e\:0442\:043e\:043a\:0430(W/m) \:043a\:0430\:043a \:0440\:0430\
+\:0437\:043d\:043e\:0441\:0442\:044c \:0432\:0441\:0435\:0439 \:043f\:043b\
+\:043e\:0442\:043d\:043e\:0441\:0442\:0438 \:0442\:0435\:043f\:043b\:043e\
+\:0432\:043e\:0433\:043e \:043f\:043e\:0442\:043e\:043a\:0430 \:0438 \:043f\
+\:043b\:043e\:0442\:043d\:043e\:0433\:043e \:0435\:0433\:043e \:0440\:0430\
+\:0434\:0438\:0430\:0446\:0438\:043e\:043d\:043d\:043e\:0439 \:0441\:043e\
+\:0441\:0442\:0430\:0432\:043b\:044f\:044e\:0449\:0435\:0439\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.937390957510988*^9, 
+  3.9373910912467747`*^9}},ExpressionUUID->"0f7c5a1b-e97c-2746-be51-\
+a950e5c602d8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"qllambda", "=", 
+  RowBox[{"ql", "-", " ", "qlr"}]}]], "Input",
+ CellLabel->"In[53]:=",ExpressionUUID->"63080cc2-a894-4b4c-b13c-a8ec785f5022"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"0.5697820720559051`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"1.4770497887543792`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"3.2515636796397893`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"4.783138977302598`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"7.95982226624855`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"10.636614116549364`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"12.726778896324895`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"16.3102161385196`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"20.82222034681144`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"], ",", 
+   TemplateBox[{"22.754966361310377`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", "\"m\""}], 
+     "watts per meter", 
+     FractionBox["\"Watts\"", "\"Meters\""]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935897840506779*^9, 3.93598979068038*^9, 3.93659475224959*^9, {
+   3.937216373533651*^9, 3.937216403481224*^9}, 3.9372164995355167`*^9, 
+   3.9373909937969728`*^9, {3.9431634013023605`*^9, 3.9431634023744392`*^9}},
+ CellLabel->"Out[53]=",ExpressionUUID->"6a2a2212-7fa1-3a4b-9072-57d4f6f97100"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["T1"], "Input",
+ CellChangeTimes->{{3.935897852661976*^9, 3.93589786757778*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"47266359-a663-4841-a60a-45a7a6dda54f"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"293.1309169639307`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"283.9752565599585`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"339.00492367388387`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"346.0978997591217`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"373.410407004501`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"411.5025442458236`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"437.68117225594426`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"468.1893945870398`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"523.1375182634822`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"529.0053316080554`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935897872393921*^9, 3.9359897907083664`*^9, 3.936594752293499*^9, {
+   3.9372163735904827`*^9, 3.937216403537073*^9}, 3.9372164995645027`*^9, 
+   3.9373911122134495`*^9, {3.9431634013520374`*^9, 3.943163402433975*^9}},
+ CellLabel->"Out[54]=",ExpressionUUID->"b45c7e4b-c52e-4847-8540-c14fcd9107c6"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:041f\:043e\:043a\:0430\:0436\:0435\:043c \:0437\:0430\:0432\:0438\:0441\
+\:0438\:043c\:043e\:0441\:0442\:044c \:043a\:043e\:043d\:0434\:0443\:043a\
+\:0442\:0438\:0432\:043d\:043e\:0439 \:0447\:0430\:0441\:0442\:0438 \:043f\
+\:043b\:043e\:0442\:043d\:043e\:0441\:0442\:0438 \:0442\:0435\:043f\:043b\
+\:043e\:0432\:043e\:0433\:043e \:043f\:043e\:0442\:043e\:043a\:0430 \:043e\
+\:0442 \:0442\:0435\:043c\:043f\:0435\:0440\:0430\:0442\:0443\:0440\:044b \
+\:043d\:0438\:0442\:0438 qllambda(T1) \:0432 \:0432\:0438\:0434\:0435 \:0442\
+\:0430\:0431\:043b\:0438\:0446\:044b\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.937391125109434*^9, 
+  3.9373911626148815`*^9}},ExpressionUUID->"df4f7e02-9b6b-9b4b-865c-\
+04e3ac76dcff"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"qllambdaT1", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"Length", "[", "T1", "]"}], "]"}]}], ";", 
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "<=", 
+     RowBox[{"Length", "[", "T1", "]"}]}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{
+     RowBox[{"qllambdaT1", "[", 
+      RowBox[{"[", "i", "]"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"T1", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"qllambda", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"MatrixForm", "[", "qllambdaT1", "]"}]}], "Input",
+ CellChangeTimes->{{3.935899949668758*^9, 3.935900093482265*^9}, {
+  3.9372165075276756`*^9, 3.937216513328365*^9}},
+ CodeAssistOptions->{
+ "CodeToolsOptions"-><|"CodeInspect" -> <|"Tags" -> <|"For" -> <||>|>|>|>},
+ CellLabel->"In[55]:=",ExpressionUUID->"011f115a-ab70-ca40-842e-dda06f5e189a"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      TemplateBox[{"293.1309169639307`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.5697820720559051`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"283.9752565599585`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"1.4770497887543792`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"339.00492367388387`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"3.2515636796397893`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"346.0978997591217`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"4.783138977302598`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"373.410407004501`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"7.95982226624855`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"411.5025442458236`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"10.636614116549364`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"437.68117225594426`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"12.726778896324895`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"468.1893945870398`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"16.3102161385196`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"523.1375182634822`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"20.82222034681144`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]},
+     {
+      TemplateBox[{"529.0053316080554`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"22.754966361310377`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/\"", "\[InvisibleSpace]", 
+          "\"m\""}], "watts per meter", 
+        FractionBox["\"Watts\"", "\"Meters\""]},
+       "Quantity"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.935900059441223*^9, 3.9359000942817783`*^9, 3.935989790767407*^9, 
+   3.936594752338352*^9, {3.93721637366733*^9, 3.937216403603895*^9}, {
+   3.937216499573442*^9, 3.937216513742201*^9}, 3.937391164695677*^9, {
+   3.943163401414942*^9, 3.9431634025052586`*^9}},
+ CellLabel->
+  "Out[56]//MatrixForm=",ExpressionUUID->"eb63a156-3f6f-2e40-a508-\
+a4136cd9b783"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "\:0412", " ", "CAS", " ", "Origin", " ", 
+    "\:043f\:0440\:043e\:0432\:0435\:0434\:0435\:043c", " ", 
+    "\:043b\:0438\:043d\:0435\:0439\:043d\:0443\:044e", " ", 
+    "\:0440\:0435\:0433\:0440\:0435\:0441\:0441\:0438\:044e", " ", 
+    "\:0434\:0430\:043d\:043d\:043e\:0439", " ", 
+    "\:0437\:0430\:0432\:0438\:0441\:0438\:043c\:043e\:0441\:0442\:0438", " ",
+     "\:0432", " ", "\:0444\:043e\:0440\:043c\:0435", " ", "qllambda", 
+    RowBox[{"(", "T1", ")"}]}], "=", 
+   RowBox[{"Intercept", " ", "+", " ", 
+    RowBox[{"B1", "*", "T1"}], "+", " ", 
+    RowBox[{"B2", "*", 
+     SuperscriptBox["T1", "2"]}]}]}], ",", " ", 
+  RowBox[{"\:0433\:0434\:0435", " ", 
+   RowBox[{"{", 
+    RowBox[{"Intercept", ",", "B1", ",", "B2"}], "}"}], " ", 
+   "\:043a\:043e\:044d\:0444\:0444\:0438\:0446\:0435\:043d\:0442\:044b", " ", 
+   RowBox[{
+   "\:0440\:0435\:0433\:0440\:0435\:0441\:0441\:0438\:0438", ".", 
+    "\[IndentingNewLine]", "CAS"}], " ", "Origin", "  ", 
+   "\:0442\:0430\:043a\:0436\:0435", " ", 
+   "\:0432\:044b\:0434\:0430\:0435\:0442", " ", 
+   "\:043f\:043e\:0433\:0440\:0435\:0448\:043d\:043e\:0441\:0442\:0438", " ", 
+   "\:043e\:043f\:0440\:0435\:0434\:0435\:043b\:0435\:043d\:0438\:044f", " ", 
+   "\:043a\:043e\:044d\:0444\:0444\:0438\:0446\:0435\:043d\:0442\:043e\:0432",
+    " ", "\:0440\:0435\:0433\:0440\:0435\:0441\:0441\:0438\:0438", 
+   RowBox[{"(", 
+    RowBox[{"{", 
+     RowBox[{"InterceptERR", ",", "B1ERR", ",", "B2ERR"}], "}"}], ")"}], 
+   RowBox[{"(", 
+    RowBox[{
+    "\:0441\:043c", ".", " ", 
+     "\:043f\:0440\:0438\:043b\:043e\:0436\:0435\:043d\:0438\:0435"}], 
+    ")"}]}]}]], "Subsubsection",
+ CellChangeTimes->{{3.9359371012715416`*^9, 3.9359372117045555`*^9}, {
+  3.9359373090805874`*^9, 3.93593746687043*^9}, {3.935937545960598*^9, 
+  3.9359376002406006`*^9}, {3.935989197197315*^9, 3.9359892005406647`*^9}, {
+  3.937216535971348*^9, 3.937216549848289*^9}, {3.937391183173649*^9, 
+  3.9373913210543575`*^9}, {3.937391845711361*^9, 
+  3.937391865451046*^9}},ExpressionUUID->"984c446c-41df-844a-8f92-\
+639c9d0e84e0"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Intercept", "=", 
+   RowBox[{"-", "2.56339"}]}], ";", " ", 
+  RowBox[{"B1", "=", 
+   RowBox[{"-", "0.03593"}]}], " ", ";", " ", 
+  RowBox[{"B2", "=", " ", 
+   RowBox[{"1.60074", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "4"}]]}]}], " ", ";", " ", 
+  RowBox[{"InterceptERR", "=", "10.03729"}], " ", ";", "     ", 
+  RowBox[{"B1ERR", "=", "0.04936"}], ";", " ", 
+  RowBox[{"B2ERR", "=", 
+   RowBox[{"5.87001", "*", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "5"}]]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.935989192863428*^9, 3.935989194110863*^9}, {
+  3.937391338521675*^9, 3.937391352372685*^9}},
+ CellLabel->"In[57]:=",ExpressionUUID->"51ccf875-ab2b-ad49-b10d-520aab8f9d3b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\:0418\:0441\:043f\:043e\:043b\:044c\:0437\:0443\:044f \:043a\:043e\:044d\
+\:0444\:0444\:0438\:0446\:0435\:043d\:0442\:044b B1 , B2 \:0440\:0435\:0433\
+\:0440\:0435\:0441\:0441\:0438\:0438 \:043f\:043e\:043b\:0443\:0447\:0438\
+\:043c \:043f\:0440\:0438\:043c\:0435\:0440\:043d\:0443\:044e \:0430\:043d\
+\:0430\:043b\:0438\:0442\:0438\:0447\:0435\:0441\:043a\:0443\:044e \:0437\
+\:0430\:0432\:0438\:0441\:0438\:043c\:043e\:0441\:0442\:044c \:043a\:043e\
+\:044d\:0444\:0444\:0438\:0446\:0435\:043d\:0442\:0430 \:0442\:0435\:043f\
+\:043b\:043e\:043f\:0440\:043e\:0432\:043e\:0434\:043d\:043e\:0441\:0442\:0438\
+ \[Lambda] \:043e\:0442 \
+\:0442\:0435\:043c\:043f\:0435\:0440\:0430\:0442\:0443\:0440\:044b \:043d\
+\:0438\:0442\:0438 T1 \nd2-\:0432\:043d\:0435\:0448\:043d\:0438\:0439 \:0434\
+\:0438\:0430\:043c\:0435\:0442\:0440 \:0446\:0438\:043b\:0438\:043d\:0434\
+\:0440\:0438\:0447\:0435\:0441\:043a\:043e\:0433\:043e \:0441\:043b\:043e\
+\:044f \:0432\:043e\:0437\:0434\:0443\:0445\:0430(m)\n*\:0422\:0435\:0445\
+\:043d\:0438\:0447\:0435\:0441\:043a\:0430\:044f \:0441\:043f\:0440\:0430\
+\:0432\:043a\:0430:\nQuantityMagnitude \:0443\:0431\:0438\:0440\:0430\:0435\
+\:0442 \:0440\:0430\:0437\:043c\:0435\:0440\:043d\:043e\:0441\:0442\:044c \
+\:0432\:0435\:043b\:0438\:0447\:0438\:043d\:044b-\:044d\:0442\:043e \:0443\
+\:043f\:0440\:043e\:0449\:0430\:0435\:0442 \:0432\:044b\:0447\:0438\:0441\
+\:043b\:0435\:043d\:0438\:044f \:0438 \:043d\:0435 \:0437\:0430\:0445\:043b\
+\:0430\:043c\:043b\:044f\:0435\:0442 \:0444\:0430\:0439\:043b \:043e\:0431\
+\:0440\:0430\:0431\:043e\:0442\:043a\:0438, \:0438\:043d\:0430\:0447\:0435 \
+\:043f\:0440\:0438\:0448\:043b\:043e\:0441\:044c \:0431\:044b \:044f\:0432\
+\:043d\:043e \:043f\:0440\:0438\:0441\:0432\:0430\:0438\:0432\:0430\:0442\
+\:044c \:0440\:0430\:0437\:043c\:0435\:0440\:043d\:043e\:0441\:0442\:044c \
+\:043a\:0430\:0436\:0434\:043e\:043c\:0443 \:043a\:043e\:044d\:0444\:0444\
+\:0438\:0446\:0435\:043d\:0442\:0443 \:0440\:0435\:0433\:0440\:0435\:0441\
+\:0441\:0438\:0438 , \:043d\:0430\:043f\:0440\:0438\:043c\:0435\:0440 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"B1", "(", 
+     FractionBox["W", 
+      RowBox[{"M", "*", "K"}]], ")"}], ",", 
+    RowBox[{"B2", "(", 
+     FractionBox[
+      SuperscriptBox["W", "2"], 
+      RowBox[{
+       SuperscriptBox["m", "2"], "*", 
+       SuperscriptBox["K", "2"]}]], ")"}]}], TraditionalForm]],
+  FormatType->TraditionalForm,ExpressionUUID->
+  "d32167d2-9016-4743-a44f-f220cb13adc9"],
+ " \:0438 \:043f\:0440\:043e\:0447\:0438\:0435"
+}], "Subsubsection",
+ CellChangeTimes->{{3.9373914102969666`*^9, 3.9373915064798317`*^9}, {
+  3.937391641813284*^9, 3.937391774668331*^9}, {3.937391879208807*^9, 
+  3.937391880047182*^9}},ExpressionUUID->"719899b8-0b3a-0040-8661-\
+9976ae0d69ae"],
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"d2", "=", 
+     RowBox[{"Quantity", "[", 
+      RowBox[{"0.0025", ",", "\"\<Meters\>\""}], "]"}]}], ";", " ", 
+    RowBox[{"A", "=", 
+     RowBox[{
+      FractionBox["1", 
+       RowBox[{"2", "*", "\[Pi]"}]], "*", 
+      RowBox[{"Log", "[", 
+       FractionBox["d2", "d1"], "]"}]}]}], " ", ";", " ", 
+    RowBox[{"B", "=", "B1"}], "  ", ";", 
+    RowBox[{"Unprotect", "[", "C", "]"}], ";", " ", 
+    RowBox[{"C", "=", 
+     RowBox[{"2", "*", "B2"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"\[Lambda]", "[", "T1", "]"}], "=", 
+     RowBox[{"Quantity", "[", 
+      RowBox[{
+       RowBox[{"A", 
+        RowBox[{"(", 
+         RowBox[{"B", "+", " ", 
+          RowBox[{"C", "*", 
+           RowBox[{"QuantityMagnitude", "[", "T1", "]"}]}]}], ")"}]}], ",", 
+       FractionBox["\"\<Watts\>\"", 
+        RowBox[{"\"\<Meters\>\"", "*", "\"\<Kelvins\>\""}]]}], "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.935989289246355*^9, 3.935989373158768*^9}, {
+   3.9359894217523003`*^9, 3.935989514378818*^9}, {3.935989568509075*^9, 
+   3.9359895740274677`*^9}, {3.9359896051323853`*^9, 3.935989617564579*^9}, {
+   3.935989711153326*^9, 3.935989736308863*^9}, {3.9359935306144924`*^9, 
+   3.935993541223591*^9}, {3.9360102205129623`*^9, 3.936010227094049*^9}, 
+   3.936013474625532*^9, 3.936013621463198*^9, {3.937391369743481*^9, 
+   3.937391401667879*^9}, {3.93739156398062*^9, 3.93739163128335*^9}, {
+   3.937391826123852*^9, 3.937391826871256*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"258cc2bc-9054-ad4f-88da-e5b83d36e36a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["T1"], "Input",
+ CellChangeTimes->{
+  3.935989551101383*^9, 3.9359897044833755`*^9, {3.9359936077278633`*^9, 
+   3.935993608165327*^9}},
+ CellLabel->"In[60]:=",ExpressionUUID->"669a939a-041a-2441-9077-eef16435b6a3"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"293.1309169639307`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"283.9752565599585`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"339.00492367388387`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"346.0978997591217`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"373.410407004501`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"411.5025442458236`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"437.68117225594426`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"468.1893945870398`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"523.1375182634822`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"], ",", 
+   TemplateBox[{"529.0053316080554`", "\"K\"", "kelvins", "\"Kelvins\""},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935993608485459*^9, 3.936594752439184*^9, {3.937216373832974*^9, 
+   3.937216403805359*^9}, 3.937216499647217*^9, 3.9373915279703875`*^9, {
+   3.9431634014858055`*^9, 3.9431634025950184`*^9}},
+ CellLabel->"Out[60]=",ExpressionUUID->"94f03e06-0e68-9f43-929c-8e038c022fed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Lambda]", "[", "T1", "]"}]], "Input",
+ CellChangeTimes->{{3.9359936110845985`*^9, 3.935993614804279*^9}, {
+  3.937391832871252*^9, 3.937391833775608*^9}},
+ CellLabel->"In[61]:=",ExpressionUUID->"c7cd7266-3052-a74b-9c1e-727fcec933e5"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"0.02380234766620655`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.0225976803524165`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.029838276697834912`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.03077154377747379`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.034365220616108784`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.03937724057123045`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.042821725850520506`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.046835882844391254`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.05406575001141558`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"], ",", 
+   TemplateBox[{"0.0548378147918613`", 
+     RowBox[{
+      "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"", 
+       "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+     "watts per meter kelvin", 
+     FractionBox["\"Watts\"", 
+      RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+    "Quantity"]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.935993615134678*^9, 3.936013480096557*^9, 3.936013624051649*^9, 
+   3.936594752477981*^9, {3.9372163738727913`*^9, 3.9372164038412724`*^9}, 
+   3.9372164996771374`*^9, 3.937391529810961*^9, 3.9373916363728905`*^9, 
+   3.937391834712649*^9, {3.943163401532791*^9, 3.943163402652828*^9}},
+ CellLabel->"Out[61]=",ExpressionUUID->"21c4b4b1-1cd8-5b48-8004-bd7256445b97"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:0421\:043e\:0441\:0442\:0430\:0432\:0438\:043c \:0442\:0430\:0431\:043b\
+\:0438\:0446\:0443 \:0437\:0430\:0432\:0438\:0441\:0438\:043c\:043e\:0441\
+\:0442\:0438 \:043a\:043e\:044d\:0444\:0444\:0438\:0446\:0435\:043d\:0442\
+\:0430 \:0442\:0435\:043f\:043b\:043e\:043f\:0440\:043e\:0432\:043e\:0434\
+\:043d\:043e\:0441\:0442\:0438 \:0432\:043e\:0437\:0434\:0443\:0445\:0430 \
+\[Lambda] \:043e\:0442 \:0442\:0435\:043c\:043f\:0435\:0440\:0430\:0442\:0443\
+\:0440\:044b \:043d\:0438\:0442\:0438 \:04221\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.9373918170284176`*^9, 3.937391818969145*^9}, {
+  3.937391886884907*^9, 
+  3.93739191823802*^9}},ExpressionUUID->"d670a354-3e23-bc4c-8976-\
+f2b683fbf3ba"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"T1\[Lambda]", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"Length", "[", "T1", "]"}], "]"}]}], ";", " ", 
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "<=", 
+     RowBox[{"Length", "[", "T1", "]"}]}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{
+     RowBox[{"T1\[Lambda]", "[", 
+      RowBox[{"[", "i", "]"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"T1", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"\[Lambda]", "[", "T1", "]"}], "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.935993625049066*^9, 3.935993744946747*^9}, {
+  3.936013510718038*^9, 3.936013524417108*^9}, {3.937216488413431*^9, 
+  3.9372164912030373`*^9}, {3.9373919246120872`*^9, 3.9373919365362186`*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"1780c3cd-1e58-d048-a3fc-6907e3e15310"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "T1\[Lambda]", "]"}]], "Input",
+ CellChangeTimes->{{3.935993681572985*^9, 3.9359936823264885`*^9}, {
+  3.935993755770672*^9, 3.935993761599995*^9}, {3.937391944280831*^9, 
+  3.937391944571924*^9}},
+ CellLabel->"In[63]:=",ExpressionUUID->"6c5b4cae-2afc-5a48-9826-ba0e16f93223"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      TemplateBox[{"293.1309169639307`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.02380234766620655`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"283.9752565599585`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0225976803524165`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"339.00492367388387`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.029838276697834912`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"346.0978997591217`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.03077154377747379`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"373.410407004501`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.034365220616108784`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"411.5025442458236`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.03937724057123045`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"437.68117225594426`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.042821725850520506`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"468.1893945870398`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.046835882844391254`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"523.1375182634822`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.05406575001141558`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"529.0053316080554`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0548378147918613`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.935993762025578*^9, 3.936010067928478*^9, 3.936013488578853*^9, 
+   3.936013529632658*^9, 3.9360136272999344`*^9, 3.936594752523056*^9, {
+   3.937216373923691*^9, 3.937216403886141*^9}, {3.937216494885668*^9, 
+   3.93721649971006*^9}, 3.9373919451872616`*^9, {3.9431634016019096`*^9, 
+   3.9431634027279453`*^9}},
+ CellLabel->
+  "Out[63]//MatrixForm=",ExpressionUUID->"e90da00b-9dec-8641-9aac-\
+b7c6c48bd6e8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:041f\:043e\:0441\:0447\:0438\:0442\:0430\:0435\:043c \:043f\:043e\:0433\
+\:0440\:0435\:0448\:043d\:043e\:0441\:0442\:044c \:043e\:043f\:0440\:0435\
+\:0434\:0435\:043b\:0435\:043d\:0438\:044f \:043a\:043e\:044d\:0444\:0444\
+\:0438\:0446\:0435\:043d\:0442\:0430 \:0442\:0435\:043f\:043b\:043e\:043f\
+\:0440\:043e\:0432\:043e\:0434\:043d\:043e\:0441\:0442\:0438 \:0432\:043e\
+\:0437\:0434\:0443\:0445\:0430
+\[Sigma]i-\:0430\:0431\:0441\:043e\:043b\:044e\:0442\:043d\:0430\:044f \:043f\
+\:043e\:0433\:0440\:0435\:0448\:043d\:043e\:0441\:0442\:044c \:043e\:043f\
+\:0440\:0435\:0434\:0435\:043b\:0435\:043d\:0438\:044f \:0432\:0435\:043b\
+\:0438\:0447\:0438\:043d\:044b i\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.9373919678785095`*^9, 3.9373919882505474`*^9}, {
+  3.9373920456181374`*^9, 3.9373921005718346`*^9}, {3.9373924635819855`*^9, 
+  3.9373924660246677`*^9}},ExpressionUUID->"59d1cf48-0fd9-6141-8639-\
+8f21c9056d82"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Sigma]B", "=", "B1ERR"}], ";", " ", 
+   RowBox[{"\[Sigma]C", "=", 
+    RowBox[{"2", "*", " ", "B2ERR"}]}], " ", ";", " ", 
+   RowBox[{"\[Sigma]\[Lambda]", "=", 
+    RowBox[{"A", "*", 
+     SqrtBox[
+      RowBox[{
+       SuperscriptBox["\[Sigma]B", "2"], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"QuantityMagnitude", "[", "T1", "]"}], "2"], "*", 
+        SuperscriptBox["\[Sigma]C", "2"]}]}]]}]}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.935989704046465*^9, 3.935989704047463*^9}, {
+  3.936009344290251*^9, 3.936009409648977*^9}, {3.936594868870547*^9, 
+  3.936594888291907*^9}, {3.9365949205204506`*^9, 3.9365949208386307`*^9}, {
+  3.937391997087322*^9, 3.937392016889353*^9}, {3.937392103364338*^9, 
+  3.937392145025184*^9}, {3.9373921752039566`*^9, 3.937392178048577*^9}},
+ CellLabel->"In[64]:=",ExpressionUUID->"72d315a0-e394-ea41-9501-c60f1df5b503"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"T1\[Lambda]\[Sigma]\[Lambda]", "=", 
+   RowBox[{"Range", "[", 
+    RowBox[{"Length", "[", "T1", "]"}], "]"}]}], ";", " ", 
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "<=", 
+     RowBox[{"Length", "[", "T1", "]"}]}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{
+     RowBox[{"T1\[Lambda]\[Sigma]\[Lambda]", "[", 
+      RowBox[{"[", "i", "]"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"T1", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{
+        RowBox[{"\[Lambda]", "[", "T1", "]"}], "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       FractionBox[
+        RowBox[{"\[Sigma]\[Lambda]", "[", 
+         RowBox[{"[", "i", "]"}], "]"}], 
+        RowBox[{"QuantityMagnitude", "[", 
+         RowBox[{
+          RowBox[{"\[Lambda]", "[", "T1", "]"}], "[", 
+          RowBox[{"[", "i", "]"}], "]"}], "]"}]]}], "}"}]}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{
+  3.9359895818627033`*^9, 3.9359897030029716`*^9, {3.9360094192586*^9, 
+   3.936009532079019*^9}, {3.936594812140291*^9, 3.936594817604008*^9}, {
+   3.9372164662815113`*^9, 3.9372164724931183`*^9}, {3.9372165752493916`*^9, 
+   3.937216608291987*^9}, {3.937392024767357*^9, 3.937392041180395*^9}, 
+   3.937392130840372*^9, {3.937392226203678*^9, 3.9373922511633596`*^9}, {
+   3.937392286745323*^9, 3.9373923647627544`*^9}, 3.9373924506492023`*^9, 
+   3.937392484996033*^9},
+ CellLabel->"In[65]:=",ExpressionUUID->"f5b7a6e4-30c5-7b4b-8cdc-5f889674cf40"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "\:0421\:043e\:0441\:0442\:0430\:0432\:0438\:043c \:0442\:0430\:0431\:043b\
+\:0438\:0446\:0443 ",
+ Cell[BoxData[
+  RowBox[{"T1", ",", "\[Lambda]", ",", 
+   SubscriptBox["\[Sigma]", "\[Lambda]"]}]],
+  CellChangeTimes->{
+   3.9359895818627033`*^9, 3.9359897030029716`*^9, {3.9360094192586*^9, 
+    3.936009532079019*^9}, {3.936594812140291*^9, 3.936594817604008*^9}, {
+    3.9372164662815113`*^9, 3.9372164724931183`*^9}},ExpressionUUID->
+  "ece5e112-9dd5-1044-aa4a-5674e15f3ac8"]
+}], "Subsubsection",
+ CellChangeTimes->{{3.9373924572530136`*^9, 
+  3.937392480419071*^9}},ExpressionUUID->"65b7a2a4-9011-9e49-8e3a-\
+60b33d445002"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixForm", "[", "T1\[Lambda]\[Sigma]\[Lambda]", "]"}]], "Input",
+ CellChangeTimes->{{3.9373924961661587`*^9, 3.937392506768175*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"481cff66-94fe-c34f-81af-4013f05430b0"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      TemplateBox[{"293.1309169639307`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.02380234766620655`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "1.0389713672364373`"},
+     {
+      TemplateBox[{"283.9752565599585`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0225976803524165`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "1.0832965974787716`"},
+     {
+      TemplateBox[{"339.00492367388387`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.029838276697834912`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.8733473158600641`"},
+     {
+      TemplateBox[{"346.0978997591217`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.03077154377747379`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.8538845124481131`"},
+     {
+      TemplateBox[{"373.410407004501`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.034365220616108784`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.7895180978480323`"},
+     {
+      TemplateBox[{"411.5025442458236`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.03937724057123045`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.7208663935382025`"},
+     {
+      TemplateBox[{"437.68117225594426`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.042821725850520506`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.6838387162166699`"},
+     {
+      TemplateBox[{"468.1893945870398`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.046835882844391254`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.6482604871420344`"},
+     {
+      TemplateBox[{"523.1375182634822`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.05406575001141558`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.5989546153596707`"},
+     {
+      TemplateBox[{"529.0053316080554`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0548378147918613`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"], "0.5945549632253037`"}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{
+  3.9373925075808506`*^9, {3.9431634016805115`*^9, 3.943163402880539*^9}},
+ CellLabel->
+  "Out[66]//MatrixForm=",ExpressionUUID->"3c9bae25-360f-1a4a-a3dc-\
+56f35332f2d8"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+\:0421\:0440\:0430\:0432\:043d\:0438\:043c \:0437\:043d\:0430\:0447\:0435\
+\:043d\:0438\:044f \[Lambda] \:0438\:0437 \
+\:044d\:043a\:0441\:043f\:0435\:0440\:0438\:043c\:0435\:043d\:0442\:0430 \
+\:0441\:043e \:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f\:043c\:0438 \
+\:0438\:0437 \:0441\:043f\:0440\:0430\:0432\:043e\:0447\:043d\:0438\:043a\
+\:043e\:0432(\:0441\:043c. \:043f\:0440\:0438\:043b\:043e\:0436\:0435\:043d\
+\:0438\:044f)
+\:0414\:043b\:044f \:044d\:043a\:043e\:043d\:043e\:043c\:0438\:0438 \:043f\
+\:0440\:043e\:0441\:0442\:0440\:0430\:043d\:0441\:0442\:0432\:0430 \:043f\
+\:0440\:0438\:0432\:0435\:0434\:0435\:043c \:043b\:0438\:0448\:044c \:043d\
+\:0435\:0441\:043a\:043e\:043b\:044c\:043a\:043e \:0437\:043d\:0430\:0447\
+\:0435\:043d\:0438\:0439 \[Lambda]  \:0432 \:0444\:043e\:0440\:043c\:0435 \
+\:0442\:0430\:0431\:043b\:0438\:0446\:044b\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.937216588786343*^9, 3.937216591876484*^9}, 
+   3.9373924903378677`*^9, {3.937392528564884*^9, 3.9373925828796444`*^9}, {
+   3.9373926301796265`*^9, 
+   3.9373926371284943`*^9}},ExpressionUUID->"bd3b1c40-79c2-7445-a605-\
+91524af71355"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"TableLambda", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "26.2", ",", "30", ",", "33.8", ",", "37.3", ",", "40.7", ",", 
+        "43.9"}], "}"}], "*", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "3"}]]}], ",", 
+     FractionBox["\"\<Watts\>\"", 
+      RowBox[{"\"\<Meters\>\"", "*", "\"\<Kelvins\>\""}]]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"TableT1", "=", 
+   RowBox[{"Quantity", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "300", ",", "350", ",", "400", ",", "450", ",", "500", ",", "550"}], 
+      "}"}], ",", "\"\<Kelvins\>\""}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.9359897021776676`*^9, 3.935989702182654*^9}, {
+  3.9360098136324997`*^9, 3.936009907345238*^9}, {3.937392591244623*^9, 
+  3.9373926542077236`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"f1765553-fe75-b44d-a2c7-0c7e4870fcf7"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"T1Lambda", "=", 
+   RowBox[{"Range", "[", "6", "]"}]}], ";", " ", 
+  RowBox[{"For", "[", 
+   RowBox[{
+    RowBox[{"i", "=", "1"}], ",", 
+    RowBox[{"i", "<=", "6"}], ",", 
+    RowBox[{"i", "++"}], ",", 
+    RowBox[{
+     RowBox[{"T1Lambda", "[", 
+      RowBox[{"[", "i", "]"}], "]"}], "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"TableT1", "[", 
+        RowBox[{"[", "i", "]"}], "]"}], ",", 
+       RowBox[{"TableLambda", "[", 
+        RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.93598958935333*^9, 3.935989590235035*^9}, {
+  3.936009943582403*^9, 3.9360100471771946`*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"4dd8d328-0141-5b43-b4f4-be797c6b5fcf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"MatrixForm", "[", "T1Lambda", "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.9360100195265064`*^9, 3.93601005525419*^9}},
+ CellLabel->"In[70]:=",ExpressionUUID->"d14dd5f0-338f-1442-9a8f-d1f2edfa046f"],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      TemplateBox[{"300.`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0262`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"350.`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.03`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Kelvins\"", " ", "\"Meters\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"400.`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0338`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"450.`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0373`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"500.`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.04070000000000001`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]},
+     {
+      TemplateBox[{"550.`", "\"K\"", "kelvins", "\"Kelvins\""},
+       "Quantity"], 
+      TemplateBox[{"0.0439`", 
+        RowBox[{
+         "\"W\"", "\[InvisibleSpace]", "\"/(\"", "\[InvisibleSpace]", "\"m\"",
+           "\[ThinSpace]", "\"K\"", "\[InvisibleSpace]", "\")\""}], 
+        "watts per meter kelvin", 
+        FractionBox["\"Watts\"", 
+         RowBox[{"\"Meters\"", " ", "\"Kelvins\""}]]},
+       "Quantity"]}
+    },
+    GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Baseline}}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.936010030165966*^9, 3.936010055687145*^9}, 
+   3.936594752898424*^9, {3.9372163742612305`*^9, 3.937216403982885*^9}, 
+   3.937216499788838*^9, {3.937392643107573*^9, 3.9373926586431446`*^9}, {
+   3.9431634017623177`*^9, 3.943163402942795*^9}},
+ CellLabel->
+  "Out[70]//MatrixForm=",ExpressionUUID->"f1ae3a5b-3a0c-6b40-8ac9-\
+2dc7c1e2159a"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+\:0417\:0430\:0432\:0438\:0441\:0438\:043c\:043e\:0441\:0442\:044c \
+\[Lambda](T) \:043f\:043e\:0441\:0442\:0440\:043e\:0438\:043c \:0432 CAS \
+OriginPro, \:0442\:0430\:043c \:0436\:0435 \:0441\:0440\:0430\:0432\:043d\
+\:0438\:043c \:0441 \:0442\:0430\:0431\:043b\:0438\:0447\:043d\:044b\:043c\
+\:0438 \:0437\:043d\:0430\:0447\:0435\:043d\:0438\:044f\:043c\:0438, \:0441\
+\:043c. \:043f\:0440\:0438\:043b\:043e\:0436\:0435\:043d\:0438\:0435\
+\>", "Subsubsection",
+ CellChangeTimes->{{3.9360100780052223`*^9, 3.93601008713208*^9}, {
+  3.936012132436212*^9, 3.936012145968006*^9}, {3.937216128328211*^9, 
+  3.937216143464447*^9}, {3.937392680066145*^9, 
+  3.937392729856001*^9}},ExpressionUUID->"78497679-e92c-7f48-aca6-\
+1809888c1ba0"]
+},
+WindowSize->{1140, 574.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+DockedCells->{},
+PrintingCopies->1,
+PrintingStartingPageNumber->1,
+PrintingPageRange->{Automatic, Automatic},
+PageHeaders->{{
+   Cell[
+    TextData[{
+      StyleBox[
+       CounterBox["Page"], "PageNumber"], "  "}], "Header", 
+    CellMargins -> {{0, Inherited}, {Inherited, Inherited}}], None, None}, {
+  None, None, 
+   Cell[
+    TextData[{"   ", 
+      StyleBox[
+       CounterBox["Page"], "PageNumber"]}], "Header", 
+    CellMargins -> {{Inherited, 0}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {None, None, None}},
+PageHeaderLines->{False, False},
+PageFooterLines->{False, False},
+PrintingOptions->{"FacingPages"->True,
+"FirstPageFace"->Right,
+"FirstPageFooter"->True,
+"FirstPageHeader"->False,
+"Magnification"->1.,
+"PaperOrientation"->"Portrait",
+"PaperSize"->{595.2755905511812, 841.8897637795276},
+"PrintingMargins"->2.8346457},
+CodeAssistOptions->{"CodeToolsOptions"-><|
+ "CodeInspect" -> <|"Tags" -> <|"For" -> <|Enabled -> False|>|>|>|>},
+FrontEndVersion->"14.0 for Microsoft Windows (64-bit) (December 12, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"65310414-c2dd-9645-b737-b8ea201db25e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 419, 8, 45, "Subsubsection",ExpressionUUID->"1f1cfff9-6838-3d44-a826-929904824980"],
+Cell[CellGroupData[{
+Cell[1002, 32, 1230, 19, 115, "Subsubsection",ExpressionUUID->"0f9fb371-80a0-3649-8529-d648fe9d8b2b"],
+Cell[CellGroupData[{
+Cell[2257, 55, 1685, 39, 149, "Input",ExpressionUUID->"e7626f3d-58e3-dd49-aa17-c0750f456f2d"],
+Cell[3945, 96, 1193, 25, 37, "Output",ExpressionUUID->"316ccb34-4152-2d47-862b-aa6b69b6736a"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5187, 127, 348, 5, 45, "Subsubsection",ExpressionUUID->"827d48ae-6c6f-d949-85fe-ee165b86d0b4"],
+Cell[5538, 134, 537, 10, 43, "Input",ExpressionUUID->"438c590b-8ce5-a142-beb1-d4646fa77187"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6112, 149, 300, 5, 45, "Subsubsection",ExpressionUUID->"f3173e8b-aad7-404c-8d33-079c005669db"],
+Cell[CellGroupData[{
+Cell[6437, 158, 229, 5, 59, "Input",ExpressionUUID->"e577dec7-cf2e-754e-9cc0-5ab709cb8afd"],
+Cell[6669, 165, 1090, 25, 37, "Output",ExpressionUUID->"13acad23-cc70-8640-a58c-9820185bc532"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7808, 196, 297, 5, 45, "Subsubsection",ExpressionUUID->"2b745f90-50c1-e04c-bde6-df1f1ea3c8c4"],
+Cell[CellGroupData[{
+Cell[8130, 205, 345, 7, 59, "Input",ExpressionUUID->"44b31844-d46c-b548-bd3e-107185c23750"],
+Cell[8478, 214, 1515, 38, 37, "Output",ExpressionUUID->"198edfb4-f4df-7447-a978-a712c97b080e"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10042, 258, 1078, 21, 74, "Subsubsection",ExpressionUUID->"ebce0788-b379-c544-916e-dd3e155d01c4"],
+Cell[CellGroupData[{
+Cell[11145, 283, 453, 11, 81, "Input",ExpressionUUID->"6323ffa1-b4a9-ab47-b81d-78e943952649"],
+Cell[11601, 296, 666, 12, 32, "Output",ExpressionUUID->"9e1da089-040c-d34c-9e86-bbe6f6737097"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12316, 314, 808, 13, 71, "Subsubsection",ExpressionUUID->"381afd85-2975-614b-a1a7-15753ae0f708"],
+Cell[CellGroupData[{
+Cell[13149, 331, 461, 12, 66, "Input",ExpressionUUID->"c9ed131b-fde6-7344-8514-a47e47a9658a"],
+Cell[13613, 345, 1768, 48, 37, "Output",ExpressionUUID->"a82244cd-0110-5542-94fc-9ba79e36741f"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15430, 399, 311, 5, 45, "Subsubsection",ExpressionUUID->"317fdaa0-91a2-334c-af1a-04536d0b0fa8"],
+Cell[CellGroupData[{
+Cell[15766, 408, 274, 5, 43, "Input",ExpressionUUID->"58c5a689-d343-f74a-adcb-2b0e3ec883fd"],
+Cell[16043, 415, 1195, 25, 37, "Output",ExpressionUUID->"24a8a288-1055-9644-aa3b-c2dfe6feac14"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17287, 446, 286, 5, 45, "Subsubsection",ExpressionUUID->"58934cc7-0a66-0946-9289-e8a977900fbf"],
+Cell[17576, 453, 347, 7, 43, "Input",ExpressionUUID->"4837eb32-7149-714f-89a8-b31a495b804c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17960, 465, 413, 6, 45, "Subsubsection",ExpressionUUID->"9f00c280-8e85-8f41-8920-6c354885bff3"],
+Cell[CellGroupData[{
+Cell[18398, 475, 357, 8, 60, "Input",ExpressionUUID->"ca38b098-ecbb-7d40-9198-c3517e320640"],
+Cell[18758, 485, 2651, 68, 61, "Output",ExpressionUUID->"c859eb88-a69b-f64f-ac86-0de72d67fccd"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21458, 559, 1554, 29, 150, "Subsubsection",ExpressionUUID->"738c9769-ff5c-c84a-8d85-856799ef4970"],
+Cell[CellGroupData[{
+Cell[23037, 592, 1569, 44, 207, "Input",ExpressionUUID->"36cf8b4d-f800-714d-8c2e-14916c9b85ca"],
+Cell[24609, 638, 2750, 69, 61, "Output",ExpressionUUID->"eb0535ea-5646-4744-9173-1edb1b488692"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27408, 713, 1090, 17, 71, "Subsubsection",ExpressionUUID->"0f7c5a1b-e97c-2746-be51-a950e5c602d8"],
+Cell[CellGroupData[{
+Cell[28523, 734, 166, 3, 28, "Input",ExpressionUUID->"63080cc2-a894-4b4c-b13c-a8ec785f5022"],
+Cell[28692, 739, 2625, 67, 61, "Output",ExpressionUUID->"6a2a2212-7fa1-3a4b-9072-57d4f6f97100"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31354, 811, 172, 2, 28, "Input",ExpressionUUID->"47266359-a663-4841-a60a-45a7a6dda54f"],
+Cell[31529, 815, 1346, 27, 37, "Output",ExpressionUUID->"b45c7e4b-c52e-4847-8540-c14fcd9107c6"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32924, 848, 728, 12, 45, "Subsubsection",ExpressionUUID->"df4f7e02-9b6b-9b4b-865c-04e3ac76dcff"],
+Cell[CellGroupData[{
+Cell[33677, 864, 983, 26, 78, "Input",ExpressionUUID->"011f115a-ab70-ca40-842e-dda06f5e189a"],
+Cell[34663, 892, 4285, 111, 267, "Output",ExpressionUUID->"eb63a156-3f6f-2e40-a508-a4136cd9b783"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[38997, 1009, 2108, 43, 126, "Subsubsection",ExpressionUUID->"984c446c-41df-844a-8f92-639c9d0e84e0"],
+Cell[41108, 1054, 723, 18, 28, "Input",ExpressionUUID->"51ccf875-ab2b-ad49-b10d-520aab8f9d3b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41868, 1077, 2795, 48, 181, "Subsubsection",ExpressionUUID->"719899b8-0b3a-0040-8661-9976ae0d69ae"],
+Cell[44666, 1127, 1624, 38, 114, "Input",ExpressionUUID->"258cc2bc-9054-ad4f-88da-e5b83d36e36a"],
+Cell[CellGroupData[{
+Cell[46315, 1169, 228, 4, 28, "Input",ExpressionUUID->"669a939a-041a-2441-9077-eef16435b6a3"],
+Cell[46546, 1175, 1320, 27, 37, "Output",ExpressionUUID->"94f03e06-0e68-9f43-929c-8e038c022fed"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47903, 1207, 259, 4, 28, "Input",ExpressionUUID->"c7cd7266-3052-a74b-9c1e-727fcec933e5"],
+Cell[48165, 1213, 3795, 88, 65, "Output",ExpressionUUID->"21c4b4b1-1cd8-5b48-8004-bd7256445b97"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52009, 1307, 709, 12, 45, "Subsubsection",ExpressionUUID->"d670a354-3e23-bc4c-8976-f2b683fbf3ba"],
+Cell[52721, 1321, 948, 24, 43, "Input",ExpressionUUID->"1780c3cd-1e58-d048-a3fc-6907e3e15310"],
+Cell[CellGroupData[{
+Cell[53694, 1349, 318, 5, 43, "Input",ExpressionUUID->"6c5b4cae-2afc-5a48-9826-ba0e16f93223"],
+Cell[54015, 1356, 5475, 132, 287, "Output",ExpressionUUID->"e90da00b-9dec-8641-9aac-b7c6c48bd6e8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[59539, 1494, 933, 15, 71, "Subsubsection",ExpressionUUID->"59d1cf48-0fd9-6141-8639-8f21c9056d82"],
+Cell[60475, 1511, 951, 21, 54, "Input",ExpressionUUID->"72d315a0-e394-ea41-9501-c60f1df5b503"],
+Cell[61429, 1534, 1544, 37, 62, "Input",ExpressionUUID->"f5b7a6e4-30c5-7b4b-8cdc-5f889674cf40"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63010, 1576, 644, 14, 45, "Subsubsection",ExpressionUUID->"65b7a2a4-9011-9e49-8e3a-60b33d445002"],
+Cell[CellGroupData[{
+Cell[63679, 1594, 237, 3, 43, "Input",ExpressionUUID->"481cff66-94fe-c34f-81af-4013f05430b0"],
+Cell[63919, 1599, 5462, 128, 287, "Output",ExpressionUUID->"3c9bae25-360f-1a4a-a3dc-56f35332f2d8"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[69430, 1733, 1146, 19, 71, "Subsubsection",ExpressionUUID->"bd3b1c40-79c2-7445-a605-91524af71355"],
+Cell[70579, 1754, 956, 26, 97, "Input",ExpressionUUID->"f1765553-fe75-b44d-a2c7-0c7e4870fcf7"],
+Cell[71538, 1782, 746, 20, 43, "Input",ExpressionUUID->"4dd8d328-0141-5b43-b4f4-be797c6b5fcf"],
+Cell[CellGroupData[{
+Cell[72309, 1806, 240, 4, 43, "Input",ExpressionUUID->"d14dd5f0-338f-1442-9a8f-d1f2edfa046f"],
+Cell[72552, 1812, 3419, 86, 183, "Output",ExpressionUUID->"f1ae3a5b-3a0c-6b40-8ac9-2dc7c1e2159a"]
+}, Open  ]]
+}, Open  ]],
+Cell[75998, 1902, 744, 12, 45, "Subsubsection",ExpressionUUID->"78497679-e92c-7f48-aca6-1809888c1ba0"]
+}
+]
+*)
+

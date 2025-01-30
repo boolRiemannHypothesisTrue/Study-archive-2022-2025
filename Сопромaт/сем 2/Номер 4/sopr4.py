@@ -1,0 +1,91 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import linalg
+
+# Constants
+E = 200 * 10**9  # Модуль упругости
+m = 0.3  # Коэффициент Пуассона
+h = 0.08  # Толщина пластины
+r1 = 0.3  # Внутренний радиус пластины
+r2 = 1.4  # Внешний радиус пластины
+σ = 240 * 10**6  # Предел прочности материала
+
+D = E * h**3 / (12 * (1 - m**2))
+
+# Solve for constants
+C = np.array([[1, r1**2, np.log(r1), np.log(r1)*r1**2],
+              [0, 2*r2, 1/r2, 2*r2*np.log(r2)+r2],
+              [0, 2*r1, 1/r1, 2*r1*np.log(r1)+r1],
+              [0, 0, 0, 4/r2]])
+b = np.array([r1**4/(64*D), r2**3/(16*D), r1**3/(D*16), 1/(2*D)*r2])
+consts = linalg.solve(C, b)
+C1, C2, C3, C4 = consts
+
+# Functions
+def W(C1, C2, C3, C4, D, r, p):
+    return ((C1 + C2*r**2 + C3*np.log(r) + C4*np.log(r)*r**2) * p - r**4*p/(64*D))
+
+def W1(C2, C3, C4, D, r):
+    return (2*r*C2 + C3/r + C4*(2*r*np.log(r) + r) - r**3/(16*D))
+
+def W2(C2, C3, C4, D, r):
+    return (2*C2 - 1/r**2*C3 + C4*(3 + 2*np.log(r)) - r**2*3/(16*D))
+
+def M_r(W2, W1, r):
+    return D * (W2 + m/r * W1)
+
+def M_0(W2, W1, r):
+    return D * (m * W2 + 1/r * W1)
+
+def σ_r(M_r, h):
+    return 6 * M_r / h**2
+
+def σ_0(M_0, h):
+    return 6 * M_0 / h**2
+
+def σ_eqv(σ_r, σ_0):
+    return np.sqrt(σ_r**2 + σ_0**2 - σ_r * σ_0)
+
+# Plotting
+plt.figure(figsize=(12, 10))
+
+# First subplot: Bending moment in radial direction
+plt.subplot(2, 2, 1)
+r = np.linspace(r1, r2, 50)
+plt.plot(r, M_r(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r))
+plt.fill_between(r, M_r(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r), color='gray', alpha=0.3, hatch='||', edgecolor='black')
+plt.xlabel('Радиус r, м', fontsize=12)
+plt.ylabel('$M_r$', fontsize=12)
+plt.title('Изгибающий момент в радиальном направлении')
+
+# Second subplot: Bending moment in circumferential direction
+plt.subplot(2, 2, 2)
+plt.plot(r, M_0(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r))
+plt.fill_between(r, M_0(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r), color='gray', alpha=0.3, hatch='||', edgecolor='black')
+plt.xlabel('Радиус r, м', fontsize=12)
+plt.ylabel('$M_0$', fontsize=12)
+plt.title('Изгибающий момент в окружном направлении')
+
+# Third subplot: Equivalent stress
+plt.subplot(2, 2, 3)
+plt.plot(r, σ_eqv(σ_r(M_r(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r), h), σ_0(M_0(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r), h)))
+plt.fill_between(r, σ_eqv(σ_r(M_r(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r), h), σ_0(M_0(W2(C2, C3, C4, D, r), W1(C2, C3, C4, D, r), r), h)), color='gray', alpha=0.3, hatch='||', edgecolor='black')
+plt.xlabel('Радиус r, м', fontsize=12)
+plt.ylabel('$σ_{экв}$', fontsize=12)
+plt.title('Эквивалентное напряжение')
+σ_eqv_max=σ_eqv(σ_r(M_r(W2(C2,C3,C4,D,r1),W1(C2,C3,C4,D,r1),r1),h),σ_0(M_0(W2(C2,C3,C4,D,r1),W1(C2,C3,C4,D,r1),r1),h))
+# Fourth subplot: Deflection curve
+plt.subplot(2, 2, 4)
+p = σ / (σ_eqv_max * 10**6)
+plt.plot(r, W(C1, C2, C3, C4, D, r, p))
+plt.fill_between(r, W(C1, C2, C3, C4, D, r, p * 10**6), color='gray', alpha=0.3, hatch='||', edgecolor='black')
+plt.xlabel('Радиус r, м', fontsize=12)
+plt.ylabel('$W$', fontsize=12)
+plt.title('Эпюра прогиба пластины при нагрузке равной ее допускаемому значению')
+
+plt.tight_layout()  # Adjust layout to prevent overlap
+plt.show()
+print (f"\nσ_eqv_r1={σ_eqv(σ_r(M_r(W2(C2,C3,C4,D,r1),W1(C2,C3,C4,D,r1),r1),h),σ_0(M_0(W2(C2,C3,C4,D,r1),W1(C2,C3,C4,D,r1),r1),h))}")
+
+print (f"\nσ_eqv_r2={σ_eqv(σ_r(M_r(W2(C2,C3,C4,D,r2),W1(C2,C3,C4,D,r2),r2),h),σ_0(M_0(W2(C2,C3,C4,D,r2),W1(C2,C3,C4,D,r2),r2),h))}")
+print (f"\n[p]={p}")

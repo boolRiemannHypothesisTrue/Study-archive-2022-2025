@@ -1,0 +1,30 @@
+Ksigma=[1.8,2.0,2.2,2.3,2.5,2.6,2.7];
+%Ksigma=1:0.2:2.2;
+sigma=[400,500,600,700,800,900,1000];
+sigma_q = 400:5:1000;
+F1 = griddedInterpolant(sigma,Ksigma,'spline'); % interpolant 1
+Ksigma_Inter=F1(sigma_q);
+
+
+
+
+plot(Ksigma_Inter,sigma_q)
+
+
+
+
+
+
+
+
+
+
+
+
+grid on
+grid minor
+set(0,'DefaultLineLineWidth',1)
+ax=gca;
+ax.GridColor='k';
+ax.GridAlpha = 0.8;
+ax.GridLineStyle = ':';
